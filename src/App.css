@@ -1,6 +1,49 @@
 .container {
     background-color: #BB1233;
     width: 300px;
-    border-radius: 3%;
-    padding: 10px;
+    border-radius: 50px;
+    padding: 20px;
 }
+
+.display {
+    background-color: #2D2829;
+    color: #ffffff;
+    height: 80px;
+    width: 290px;
+    border-radius: 50px;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin: 5px;
+    box-shadow: -2px 2px #000000;
+}
+
+.buttonCont {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.number {
+    background-color: #113C78;
+    color: #ffffff
+}
+
+.special {
+    background-color: #2160B0;
+    color: #ffffff
+}
+
+.operator {
+    background-color: #3DB5E5;
+    color: #ffffff
+}
+
+.display {
+    font-size: 38pt;
+    text-align: right;
+}
+
