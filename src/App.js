@@ -18,7 +18,17 @@ function App() {
   // Don't forget to pass the functions (and any additional data needed) to the components as props
   const [ displayValue, setDisplayValue ] = useState('0');
 
-  const updateValue = param => setDisplayValue(displayValue + param);
+  const updateValue = param => {
+    setDisplayValue(displayValue === '0' ? param : displayValue + param);
+  }
+
+  const resetValue = () => setDisplayValue('0');
+
+  const calculateValue = () => {
+    setDisplayValue(eval(displayValue));
+  }
+
+
 
   return (
     <div className="container">
@@ -28,11 +38,11 @@ function App() {
         <Display displayValue={ displayValue } />
         <div className="buttonCont">
           <div className="numCont">
-            <Specials setDisplayValue={ setDisplayValue } />
-            <Numbers setDisplayValue={ setDisplayValue } />
+            <Specials updateValue={updateValue} resetValue={resetValue} />
+            <Numbers updateValue={updateValue} />
           </div>
           <div className="opsCont">
-            <Operators setDisplayValue={ setDisplayValue } />
+            <Operators updateValue={updateValue} calculateValue={calculateValue} />
           </div>
         </div>
       </div>

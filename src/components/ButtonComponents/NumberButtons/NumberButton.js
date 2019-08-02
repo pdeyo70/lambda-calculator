@@ -4,7 +4,13 @@ const NumberButton = (props) => {
   return (
     <>
       {/* Display a button element rendering the data being passed down from the parent container on props */}
-      <button className="number" onClick={ props.updateValue }>{ props.number }</button>
+      {props.number === '0' ? (
+        <button onClick={props.clickNumberBtn} className="zero number" data-type="number">
+          {props.number}
+        </button>
+      ) : (
+        <button onClick={props.clickNumberBtn} data-type="number" className="number">{props.number}</button>
+      )}
     </>
   );
 };
